@@ -1,0 +1,40 @@
+﻿<UserControl x:Class="Uppg2_EmailClient.Controls.MessageControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Uppg2_EmailClient.Controls"
+             mc:Ignorable="d"              
+             
+             d:Background="White"
+             d:DesignHeight="65" d:DesignWidth="500">
+
+    <Button x:Name="btnMessageExpand" Background="{x:Null}" BorderThickness="0" 
+            HorizontalContentAlignment="Stretch" HorizontalAlignment="Stretch"
+            Click="btnMessageExpand_Click">
+        
+        <Grid Margin="5">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="0.2*" MinWidth="75"/>
+            </Grid.ColumnDefinitions>
+
+            <StackPanel Grid.Column="0" Margin="10, 0, 0, 0" >
+                <TextBlock x:Name="tbSenderName" FontSize="14" Text="From Contact Name" FontWeight="Bold"/>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock x:Name="tbMessageSubject" FontSize="12" Foreground="DimGray" FontWeight="Bold" Margin="0, 0, 5, 0" Text="SUBJECT" />
+                    <TextBlock x:Name="tbMessageShort"   FontSize="12" Foreground="Gray" TextWrapping="NoWrap" Text="Lorem Ipsum Dolor Sit Amet" />
+                </StackPanel>
+            </StackPanel>
+
+            <StackPanel Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Right" >
+                <TextBlock x:Name="tbDateDate" FontSize="11" Text="2020-09-23" HorizontalAlignment="Right"/>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                    <TextBlock x:Name="tbDateDay" FontSize="9"  Text="Wednesday" Margin="0, 0, 2, 0"/>
+                    <TextBlock x:Name="tbDateTime" FontSize="9"  Text="10:32"/>
+                </StackPanel>
+            </StackPanel>
+        </Grid>
+        
+    </Button>
+</UserControl>
