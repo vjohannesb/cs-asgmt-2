@@ -24,8 +24,7 @@ namespace Uppg2_EmailClient.Views
         public ContactListViewModel()
         {
             InitializeComponent();
-            
-            // Har bara en "bild"
+
             ImageSource contactImage = new BitmapImage(new Uri(@"..\Images\ContactImage.jpg", UriKind.Relative));
 
             // Mock-data
@@ -38,6 +37,7 @@ namespace Uppg2_EmailClient.Views
                 { "Ee Ee", "Engineer" }
             };
 
+            // Lägg till element i stackpanel
             foreach (var kvp in contactList)
             {
                 spContactList.Children.Add(new ContactControl()
@@ -45,6 +45,8 @@ namespace Uppg2_EmailClient.Views
                     ContactName = kvp.Key,
                     ContactRole = kvp.Value,
                     ContactImage = contactImage,
+
+                    // Skicka med referenser till andra vyn (kanske inte best practice men..)
                     ContactNameView = tbContactNameView,
                     ContactRoleView = tbContactRoleView 
                 });
